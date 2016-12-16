@@ -6,8 +6,7 @@
 
 	<persistence-unit name="tutorialPU" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<!-- the JNDI data source -->
-		<non-jta-data-source>java:comp/env/jdbc/tutorialDS</non-jta-data-source>
+		
 		<properties>
 			<!-- if this is true, hibernate will print (to stdout) the SQL it executes, 
 				so you can check it to ensure it's not doing anything crazy -->
@@ -16,7 +15,7 @@
 			<!-- since most database servers have slightly different versions of the 
 				SQL, Hibernate needs you to choose a dialect so it knows the subtleties of 
 				talking to that server -->
-			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<!-- this tell Hibernate to update the DDL when it starts, very useful 
 				for development, dangerous in production -->
 			<property name="hibernate.hbm2ddl.auto" value="update" />

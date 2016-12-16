@@ -31,7 +31,7 @@ public class User {
     }
 
 	@ManyToMany
-    private final Set<Role> roles = new HashSet<Role>();
+    private  Set<Role> roles = new HashSet<Role>();
 
     public boolean addRole(Role role) {
         return roles.add(role);
